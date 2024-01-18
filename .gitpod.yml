@@ -1,0 +1,8 @@
+tasks:
+  - name: terraform
+    before: |
+      source ./bin/install_terraform_cli.sh
+vscode:
+  extensions:
+    - amazonwebservices.aws-toolkit-vscode
+    - hashicorp.terraform

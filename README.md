@@ -1,3 +1,13 @@
+# JB's README
+
+For a full breakdown of the original repo, please read the `Cisco CML README` below.
+
+This section, covers the specific modification I made to this repo to get it to work for me using Gitpod.
+
+## Terraform CLI Install
+
+Added `install_terraform_cli` bash script. Set `gp env PROJECT_ROOT='/workspace/cloud-cml'` to persist the proper `$PROJECT_ROOT` as used in various scripts. Also added a `.gitpod.yml` config to ensure the proper bash scripts are running when starting up the Gitpod environment. Lastly, modified the `.gitignore` file to make sure certain configs/files/logs don't get pushed back to GitHub.
+
 # CiscoDevNet README
 
 Version 0.1.5, August 10 2023
