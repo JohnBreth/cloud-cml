@@ -5,21 +5,21 @@
 #
 
 aws:
-  region: region-goes-here
-  bucket: bucket-name-goes-here
+  region: $AWS_DEFAULT_REGION
+  bucket: $AWS_CML_BUCKET
   flavor: m5zn.metal
-  profile: permission-profile-goes-here
-  key_name: ssh-key-name-goes-here
+  profile: $AWS_ROLE
+  key_name: CML_KEY
   disk_size: 64
 
 hostname: cml-controller
 
 app:
   user: admin
-  pass: your-secret-password
+  pass: $CML_PASSWORD
   # need to escape special chars:
   # pass: '\"!@$%'
-  deb: cml2_2.6.0-5_amd64.deb
+  deb: cml2_p_2.6.1-11_amd64-11.ova
   # list must have at least ONE element, this is what the dummy is for in case
   # 00- and 01- are commented out!
   customize:
@@ -29,11 +29,11 @@ app:
 
 sys:
   user: sysadmin
-  pass: your-secret-password
+  pass: $CML_PASSWORD
 
 license:
-  flavor: CML_Enterprise
-  token: your-smart-licensing-token
+  flavor: CML-PERSONAL
+  token: $CML_TOKEN
   # unless you have additional nodes, leave this at zero
   nodes: 0
 
